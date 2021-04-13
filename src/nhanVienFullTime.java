@@ -1,4 +1,4 @@
-public class nhanVienFullTime extends nhanVien {
+public class nhanVienFullTime extends nhanVien implements Thuong {
     private int tienThuong;
     private int tienPhat;
     private int luongCung;
@@ -33,10 +33,24 @@ public class nhanVienFullTime extends nhanVien {
     public void setLuongCung(int luongCung) {
         this.luongCung = luongCung;
     }
-    public int getlongThuclinh() {
-        return ( getluongCung()+(getTienThuong()-getTienPhat()));
-    }
+   public int luong() {
+       return (getluongCung() + (getTienThuong() - getTienPhat()));
+   }
     public String showNhanVien() {
         return  (getManhanvien()+" "+ getHoten()+" "+getSoDienThoai()+" "+getTuoi()+" " +getEmail());
+    }
+
+    @Override
+    public String toString() {
+        return this.getHoten();
+    }
+    @Override
+    public void themThuong() {
+        System.out.println("Thuong " + this.getHoten());
+    }
+
+    @Override
+    public int getSalaryOfnhanVien() {
+        return luongCung+tienThuong+tienPhat;
     }
 }

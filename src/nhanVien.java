@@ -1,4 +1,4 @@
-public class nhanVien {
+public abstract class nhanVien {
    private int manhanvien;
    private String hoten;
    private int tuoi;
@@ -59,6 +59,8 @@ public class nhanVien {
         System.out.println("Số điệ thoại: "+ this.soDienThoai);
         System.out.println("Email "+ email);
     }
-
+    public abstract int getSalaryOfnhanVien();
 
 }
+
+
